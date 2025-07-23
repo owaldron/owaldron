@@ -40,7 +40,7 @@ const workHistory: Taggable[] = [
       title: 'Junior Compiler Engineer',
       date: 'May 2025 - Aug 2025',
       image: images.Huawei,
-      link: 'https://marquescg.com',
+      link: 'https://www.huawei.com/',
       tag: 'Huawei Technologies',
       description: `
 Designed compiler passes in in C++ to optimize AI model execution on proprietary hardware accelerators.
