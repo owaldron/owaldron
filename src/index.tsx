@@ -3,22 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import posthog from 'posthog-js';
 import { PostHogProvider} from 'posthog-js/react'
 
-const options = {
+posthog.init(process.env.REACT_APP_PUBLIC_POSTHOG_KEY || '', {
   api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
-  capture_pageview: false
-}
+  defaults: '2025-05-24',
+})
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <PostHogProvider 
-      apiKey={process.env.REACT_APP_PUBLIC_POSTHOG_KEY}
-      options={options}
-    >
+    <PostHogProvider client={posthog}>
       <App />
     </PostHogProvider>
   </React.StrictMode>
