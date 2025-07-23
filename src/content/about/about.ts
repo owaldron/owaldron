@@ -37,6 +37,18 @@ const educationHistory: Taggable[] = [
 
 const workHistory: Taggable[] = [
    {
+      title: 'Junior Compiler Engineer',
+      date: 'May 2025 - Aug 2025',
+      image: images.Huawei,
+      link: 'https://marquescg.com',
+      tag: 'Huawei Technologies',
+      description: `
+Designed compiler passes in in C++ to optimize AI model execution on proprietary hardware accelerators.
+Collaborated with hardware and AI teams to co-design software abstractions that maximized throughput in wireless
+inference scenarios.
+Contributed to a custom MLIR dialect for hardware-specific transformations and operator fusion.
+`
+   },{
       title: 'Junior Developer',
       date: 'Sep 2024 - Dec 2024',
       image: images.MCG,
@@ -44,7 +56,7 @@ const workHistory: Taggable[] = [
       tag: 'MarquesCG',
       description: `
 Created reusable GitHub actions and template repositories to pioneer continuous deployment pipeline to Kubernetes.
-Developed company website in Svelte and video conference speaker analysis tools using FastAPI and ReactJS
+Developed company website in Svelte and video conference speaker analysis tools using FastAPI and ReactJS.
 Established frameworks for analysis of model accuracy and program efficiency to improve existing applications.
 `
    },{

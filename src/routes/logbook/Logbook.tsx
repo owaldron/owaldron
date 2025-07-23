@@ -38,7 +38,7 @@ const Logbook = () => {
             <div className="px-8 py-4">
                 <h1 className="text-3xl mb-2">Leave Your Mark</h1>
                 <p className="mb-3">
-                    Write whatever you'd like. Your message here will be immediately encrypted and be the seed for a randomized mark left on this page.
+                    Write whatever you'd like. Your message here will be immediately hashed and used as a seed for a randomized mark left on this page.
                     Only you will ever know what you wrote, but anyone who visits will see the mark you left here.
                 </p>
                 <p className="mb-3">
@@ -46,7 +46,7 @@ const Logbook = () => {
                     One day, you will forget what you wrote here, even if it was your own name, but the mark you've left behind will remain.
                 </p>
                 <textarea className="text-black text-2xl w-full p-1" rows={1} value={message} onChange={event => setMessage(event.target.value)} placeholder="Write a message"/>
-                <Button onClick={sendMessage} label="Send Message"/>
+                <Button onClick={sendMessage} label="Hash Message Irreversibly"/>
                 <div className="w-full flex flex-row-reverse justify-start bg-black flex-wrap-reverse mt-6">
                     {seeds.map(seed => <Mark seed={seed} key={seed.id} /> )}
                 </div>

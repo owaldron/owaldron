@@ -18,7 +18,7 @@ const AboutPage = () => {
                             <p>{aboutMeText}</p>
                             <div className='flex md:flex-row flex-col gap-4 mt-4'>
                                 <Button label='Download resume PDF' href={Resume} newTab/> 
-                                <Button label='Contact me' variant='hollow' href="mailto:owen.waldron@uwaterloo.ca" newTab />
+                                <Button label='Contact me' variant='hollow' href="mailto:me@owaldron.ca" newTab />
                             </div>
                         </div>
                         <img className="max-w-52 object-cover rounded-sm border-[3px] border-card-border md:block hidden" src={Owen} alt="Me" />
