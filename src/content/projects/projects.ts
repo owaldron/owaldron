@@ -4,6 +4,7 @@ import * as BlackJack from './blackjack';
 import * as Fuser from './fuser';
 import * as DataPool from './datapool';
 import * as WaveAI from './waveai';
+import * as MonoDepth from './monodepth';
 
 type Lynk = {
     to: string;
@@ -20,6 +21,23 @@ type Project = {
 }
 
 const projects: Project[] = [
+
+// Mono Depth
+{
+    name: 'Depth Estimation',
+    url: 'monodepth',
+    tldr: `
+    For my computer vision course, me and a partner trained an unsupervised convolutional neural network to estimate image depth.
+    `,
+    description: `
+As the final project for my CS 484 Computational Vision course, we created a convolutional neural network capable of estimating a depth map in driving scenarios. What was most interesting about this project was that we were able to leverage the geometry of the problem to enable  unsupervised learning. This is because the dataset featured left and right images taken by two cameras for each scene, so the network learned to produce pixel-wise disparity maps, which are correlated to the distance of the corresponding object. We followed some papers and produced a report, which is partly available in the GitHub link.    `,
+    tags: ["pytorch", "CNNs"],
+    links: [{
+        text: 'GitHub',
+        to: 'https://github.com/OliverTattersall/monoDepthEstim'
+    }],
+    images: Object.values(MonoDepth)
+},
 
 // Data Pool
 {
