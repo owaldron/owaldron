@@ -6,7 +6,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer className='w-full flex justify-center py-12 gap-4'>
-            <a target='_blank' rel='noreferrer' className='border-card-border' href='https://github.com/OwenWaldron' >
+            <a target='_blank' rel='noreferrer' className='border-card-border' href='https://github.com/owaldron' >
                 <img src={Github} alt='Github' className=' invert-1' />
             </a>
             <a  target='_blank' rel='noreferrer' className='border-card-border' href='https://www.linkedin.com/in/owaldron/' >

@@ -8,7 +8,7 @@ import { PostHogProvider} from 'posthog-js/react'
 
 posthog.init(process.env.REACT_APP_PUBLIC_POSTHOG_KEY || '', {
   api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,
-  defaults: '2025-05-24',
+  defaults: '2026-01-30',
 })
 
 const root = ReactDOM.createRoot(

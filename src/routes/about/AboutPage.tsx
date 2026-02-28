@@ -3,7 +3,6 @@ import Box from "../../components/box/Box";
 import Owen from '../../assets/images/saycheese.png';
 import Button from "../../components/button/Button";
 import { aboutMeText, Taggable, educationHistory, workHistory } from "../../content/about/about";
-import Resume from '../../content/about/Waldron_Owen_Resume.pdf';
 import PageContainer from "../../components/page-container/PageContainer";
 
 const AboutPage = () => {
@@ -17,8 +16,9 @@ const AboutPage = () => {
                             <h1 className="text-3xl" >Hello, World!</h1>
                             <p>{aboutMeText}</p>
                             <div className='flex md:flex-row flex-col gap-4 mt-4'>
-                                <Button label='Download resume PDF' href={Resume} newTab/> 
-                                <Button label='Contact me' variant='hollow' href="mailto:me@owaldron.ca" newTab />
+                                <Button label='Download resume PDF' variant='hollow' href="/resume" newTab/>
+                                <Button label='Contact me' href="mailto:me@owaldron.ca" newTab />
+                                <Button label='Leave a log!' href="/logbook"/>
                             </div>
                         </div>
                         <img className="max-w-52 object-cover rounded-sm border-[3px] border-card-border md:block hidden" src={Owen} alt="Me" />
@@ -64,9 +64,14 @@ const TagContent: FC<TagContentProps> = ({taggable}) => {
                     </h3>
                 </div>
             </div>
-            <p>
-                {taggable.description}
-            </p>
+            <ul className="flex flex-col pt-2 gap-2 list-disc pl-5">
+                {taggable.description.map((line, index) => (
+                <li key={index} className="leading-tight">
+                    {line}
+                    {index < taggable.description.length - 1 && <br />}
+                </li>
+                ))}
+            </ul>
         </div>
     )
 }

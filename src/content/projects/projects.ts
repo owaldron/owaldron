@@ -85,7 +85,7 @@ In highschool, my friend had an non-verbal autistic younger brother who depended
     tags: ["iOS", "Swift", 'SwiftUI'],
     links: [{
         text: 'GitHub',
-        to: 'https://github.com/OwenWaldron/TobaTalk'
+        to: 'https://github.com/owaldron/TobaTalk'
     }],
     images: Object.values(TobaImages)
 },
@@ -103,7 +103,7 @@ As my Grade 12 Computer Science class final project, we created a virtual store 
     tags: ['iOS', 'SwiftUI', 'Firebase'],
     links: [{
         text: 'GitHub',
-        to: 'https://github.com/OwenWaldron/FUSER'
+        to: 'https://github.com/owaldron/FUSER'
     }],
     images: Object.values(Fuser)
 },
@@ -121,7 +121,7 @@ In my highschool math class, we had a project to apply what we had learned in a 
     tags: ['Python', 'Vector Graphics'],
     links: [{
         text: 'GitHub',
-        to: 'https://github.com/OwenWaldron/Donut'
+        to: 'https://github.com/owaldron/Donut'
     }],
     images: Object.values(Donuts)
 },
@@ -139,10 +139,10 @@ Using ReactJS, I created blackjack powered by a deck of cards API. The cards are
     tags: ['React.js'],
     links: [{
         text: 'Project Link',
-        to: 'https://blackjack-git-master-owenwaldron.vercel.app/',
+        to: 'https://blackjack-git-master-owaldron.vercel.app/',
     }, {
         text: 'GitHub',
-        to: 'https://github.com/OwenWaldron/blackjack'
+        to: 'https://github.com/owaldron/blackjack'
     }],
     images: Object.values(BlackJack)
 }];
