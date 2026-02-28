@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import posthog from 'posthog-js';
-import { PostHogProvider} from 'posthog-js/react'
+import { PostHogProvider} from '@posthog/react'
 
 posthog.init(process.env.REACT_APP_PUBLIC_POSTHOG_KEY || '', {
   api_host: process.env.REACT_APP_PUBLIC_POSTHOG_HOST,

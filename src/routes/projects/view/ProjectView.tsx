@@ -15,7 +15,7 @@ const ProjectView = () => {
 
     useEffect(() => {
         if (cycling) setTimeout(() => setCounter(counter + 1), 3000)
-    }, [counter])
+    }, [cycling, counter])
 
     const project = projects.find(proj => proj.url === name);
 
@@ -52,6 +52,7 @@ const ProjectView = () => {
                              className="cursor-pointer h-6"
                              src={index === i ? OnButton : OffButton} 
                              onClick={() => { setCycling(false); setIndex(i); setCheck(counter) }}
+                             alt=""
                              />
                         )}
                     </div>
