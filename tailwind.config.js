@@ -12,7 +12,10 @@ module.exports = {
         'owaldron-blue': '#01569C',
         'card-bg': '#18165F',
         'card-border': '#008AFB'
-      }
+      },
+      fontFamily: {
+        sans: ['var(--main-font)', 'sans-serif'],
+      },
     },
   },
   plugins: [],
