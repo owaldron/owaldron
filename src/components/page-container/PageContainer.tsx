@@ -1,7 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import FadeIn from "./FadeIn";
 
 type ContainerProps = {
     children: ReactNode;
@@ -9,13 +8,13 @@ type ContainerProps = {
 
 const PageContainer: FC<ContainerProps> = ({ children }) => {
     return (
-        <FadeIn>
+        <article>
             <Header />
             <div className="center" >
                 {children}
             </div>
             <Footer />
-        </FadeIn>
+        </article>
     );
 };
 
