@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: project.name,
         description: project.tldr.trim(),
         path: `/projects/${project.url}`,
-        image: project.images[0],
+        image: project.images[0].src,
     });
 }
 

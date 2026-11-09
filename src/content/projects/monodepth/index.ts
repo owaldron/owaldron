@@ -1,11 +1,5 @@
-import image1Img from './img1.png';
-import image2Img from './img2.png';
-import image3Img from './img3.png';
-import image4Img from './img4.png';
-import image5Img from './img5.png';
-
-export const image1: string = image1Img.src;
-export const image2: string = image2Img.src;
-export const image3: string = image3Img.src;
-export const image4: string = image4Img.src;
-export const image5: string = image5Img.src;
+export { default as image1 } from './img1.png';
+export { default as image2 } from './img2.png';
+export { default as image3 } from './img3.png';
+export { default as image4 } from './img4.png';
+export { default as image5 } from './img5.png';

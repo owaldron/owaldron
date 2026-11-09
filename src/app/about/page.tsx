@@ -1,12 +1,11 @@
 import React, { FC } from "react";
+import Image from "next/image";
 import Box from "../../components/box/Box";
-import OwenImg from '../../assets/images/saycheese.png';
+import Owen from '../../assets/images/saycheese.png';
 import Button from "../../components/button/Button";
 import { aboutMeText, Taggable, educationHistory, workHistory } from "../../content/about/about";
 import PageContainer from "../../components/page-container/PageContainer";
 import { pageMetadata } from "../../content/site";
-
-const Owen = OwenImg.src;
 
 export const metadata = pageMetadata({
     title: 'About',
@@ -22,7 +21,7 @@ const AboutPage = () => {
                 <Box label="About Me">
                     <div className="flex justify-between gap-8 px-8 py-4">
                         <div className="flex flex-col w-full">
-                            <img className="max-w-[80%] mx-auto rounded-sm mb-8 border-[3px] border-card-border-gray md:hidden block" src={Owen} alt="Me" />
+                            <Image className="max-w-[80%] mx-auto rounded-sm mb-8 border-[3px] border-card-border-gray md:hidden block" src={Owen} alt="Me" sizes="80vw" />
                             <h1 className="text-3xl" >Hello, World!</h1>
                             <p>{aboutMeText}</p>
                             <div className='flex md:flex-row flex-col gap-4 mt-4'>
@@ -31,7 +30,7 @@ const AboutPage = () => {
                                 <Button label='Leave a log!' href="/logbook"/>
                             </div>
                         </div>
-                        <img className="max-w-52 object-cover rounded-sm border-[3px] border-card-border md:block hidden" src={Owen} alt="Me" />
+                        <Image className="max-w-52 object-cover rounded-sm border-[3px] border-card-border md:block hidden" src={Owen} alt="Me" sizes="208px" />
                     </div>
                 </Box>
                 <Box label="Education">
@@ -55,7 +54,7 @@ const TagContent: FC<TagContentProps> = ({taggable}) => {
         <div>
             <div className="flex gap-4 md:pb-0 pb-3">
                 <a href={taggable.link} className="mt-auto mb-auto border-[2px] border-card-border md:block bg-white" target="_blank" rel="noreferrer" >
-                    <img src={taggable.image} className="md:w-12 md:h-12 w-16 h-16 max-w-16 object-cover" alt=""/>
+                    <Image src={taggable.image} className="md:w-12 md:h-12 w-16 h-16 max-w-16 object-cover" alt="" sizes="64px" />
                 </a>
                 <div className="w-full">
                     <div className="flex justify-between md:flex-row flex-col w-full">

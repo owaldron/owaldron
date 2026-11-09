@@ -1,3 +1,4 @@
+import type { StaticImageData } from 'next/image';
 import * as images from './icons'
 
 import { resumeLink } from './about-links';
@@ -14,7 +15,7 @@ interface Taggable {
    date: string;
    tag: string;
    description: string[];
-   image: string;
+   image: StaticImageData;
    link?: string;
 }
 

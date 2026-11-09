@@ -1,3 +1,4 @@
+import type { StaticImageData } from 'next/image';
 import * as TobaImages from './tobatalks'; 
 import * as Donuts from './donut';
 import * as BlackJack from './blackjack';
@@ -16,7 +17,7 @@ type Project = {
     tldr: string;
     description: string;
     tags: string[];
-    images: string[];
+    images: StaticImageData[];
     links: Lynk[];
 }
 

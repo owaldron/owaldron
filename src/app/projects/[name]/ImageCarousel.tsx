@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
+import Image, { StaticImageData } from "next/image";
 import OnButton from '../../../assets/images/radiobutton/buttonon.png';
 import OffButton from '../../../assets/images/radiobutton/buttonoff.png';
 
-const ImageCarousel = ({ images }: { images: string[] }) => {
+const ImageCarousel = ({ images }: { images: StaticImageData[] }) => {
     const [tempIndex, setIndex] = useState(0);
     const [cycling, setCycling] = useState(true);
     const [check, setCheck] = useState(0);
@@ -20,9 +21,12 @@ const ImageCarousel = ({ images }: { images: string[] }) => {
     const index = (tempIndex + dif) % images.length;
 
     return <>
-        <img 
-         className="w-[42rem] md:h-[26rem] object-cover border-card-border border-4" 
-         src={images[index]} alt="" 
+        <Image
+         className="w-[42rem] md:h-[26rem] object-cover border-card-border border-4"
+         src={images[index]} alt=""
+         sizes="(min-width: 768px) 672px, 100vw"
+         loading="eager"
+         fetchPriority={index === 0 ? 'high' : 'auto'}
          />
         <div className="flex gap-1 mt-2">
             {images.map((_, i) => 
