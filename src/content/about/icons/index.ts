@@ -1,8 +1,17 @@
-export { default as MCG } from './mcg.png';
-export { default as MMC } from './mmc.jpg';
-export { default as TFS } from './tfs.png';
-export { default as Waterloo } from './waterloo.png';
-export { default as TAC } from './tac.jpeg';
-export { default as NYAC } from './nyac.png';
-export { default as Huawei } from './huawei.png';
-export { default as Waabi } from './waabi.png';
+import MCGImg from './mcg.png';
+import MMCImg from './mmc.jpg';
+import TFSImg from './tfs.png';
+import WaterlooImg from './waterloo.png';
+import TACImg from './tac.jpeg';
+import NYACImg from './nyac.png';
+import HuaweiImg from './huawei.png';
+import WaabiImg from './waabi.png';
+
+export const MCG: string = MCGImg.src;
+export const MMC: string = MMCImg.src;
+export const TFS: string = TFSImg.src;
+export const Waterloo: string = WaterlooImg.src;
+export const TAC: string = TACImg.src;
+export const NYAC: string = NYACImg.src;
+export const Huawei: string = HuaweiImg.src;
+export const Waabi: string = WaabiImg.src;

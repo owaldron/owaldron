@@ -1,4 +1,9 @@
-export { default as image1 } from './bj1.jpg';
-export { default as image2 } from './bj2.jpg';
-export { default as image3 } from './bj3.jpg';
-export { default as image4 } from './bj4.jpg';
+import image1Img from './bj1.jpg';
+import image2Img from './bj2.jpg';
+import image3Img from './bj3.jpg';
+import image4Img from './bj4.jpg';
+
+export const image1: string = image1Img.src;
+export const image2: string = image2Img.src;
+export const image3: string = image3Img.src;
+export const image4: string = image4Img.src;

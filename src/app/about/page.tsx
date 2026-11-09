@@ -1,9 +1,19 @@
 import React, { FC } from "react";
 import Box from "../../components/box/Box";
-import Owen from '../../assets/images/saycheese.png';
+import OwenImg from '../../assets/images/saycheese.png';
 import Button from "../../components/button/Button";
 import { aboutMeText, Taggable, educationHistory, workHistory } from "../../content/about/about";
 import PageContainer from "../../components/page-container/PageContainer";
+import { pageMetadata } from "../../content/site";
+
+const Owen = OwenImg.src;
+
+export const metadata = pageMetadata({
+    title: 'About',
+    description: 'About Owen Waldron: a computer science student at the University of Waterloo (AI specialization, Pure Math minor) '
+        + 'with research and engineering experience at Waabi, CrySP, and Huawei. Education, work experience, and resume.',
+    path: '/about',
+});
 
 const AboutPage = () => {
     return (

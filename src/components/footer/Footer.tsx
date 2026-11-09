@@ -7,10 +7,10 @@ const Footer = () => {
     return (
         <footer className='w-full flex justify-center py-12 gap-4'>
             <a target='_blank' rel='noreferrer' className='border-card-border' href='https://github.com/owaldron' >
-                <img src={Github} alt='Github' className=' invert-1' />
+                <img src={Github.src} alt='Github' className=' invert-1' />
             </a>
             <a  target='_blank' rel='noreferrer' className='border-card-border' href='https://www.linkedin.com/in/owaldron/' >
-                <img src={LinkedIn} alt='LinkedIn' />
+                <img src={LinkedIn.src} alt='LinkedIn' />
             </a>
         </footer>
     )

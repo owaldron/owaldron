@@ -1,13 +1,14 @@
+'use client';
+
 import React, { FC, useEffect, useState } from "react";
-import PageContainer from "../../components/page-container/PageContainer";
-import Box from "../../components/box/Box";
 import { LogSeed, fetchSeeds, hashMessage, uploadSeed } from "./logbook-service";
 import { Timestamp } from 'firebase/firestore';
 import drawSplat from '../../services/splatter/splatter';
 import './Logbook.css';
 import Button from "../../components/button/Button";
 
-const Logbook = () => {
+// The interactive part of the logbook: message input and the marks pulled live from Firestore.
+const LogbookForm = () => {
     const [message, setMessage] = useState('');
     const [seeds, setSeeds] = useState<LogSeed[]>([]);
 
@@ -33,26 +34,13 @@ const Logbook = () => {
         ])
     }
 
-    return <PageContainer>
-        <Box label="Logbook">
-            <div className="px-8 py-4">
-                <h1 className="text-3xl mb-2">Leave Your Mark</h1>
-                <p className="mb-3">
-                    Write whatever you'd like. Your message here will be immediately hashed and used as a seed for a randomized mark left on this page.
-                    Only you will ever know what you wrote, but anyone who visits will see the mark you left here.
-                </p>
-                <p className="mb-3">
-                    You can write your name, a nice message, a mean message, a love poem, or random letters; the algorithm is indifferent.
-                    One day, you will forget what you wrote here, even if it was your own name, but the mark you've left behind will remain.
-                </p>
-                <textarea className="text-black text-2xl w-full p-1" rows={1} value={message} onChange={event => setMessage(event.target.value)} placeholder="Write a message"/>
-                <Button onClick={sendMessage} label="Hash Message Irreversibly"/>
-                <div className="w-full flex flex-row-reverse justify-start bg-black flex-wrap-reverse mt-6">
-                    {seeds.map(seed => <Mark seed={seed} key={seed.id} /> )}
-                </div>
-            </div>
-        </Box>
-    </PageContainer>
+    return <>
+        <textarea className="text-black text-2xl w-full p-1" rows={1} value={message} onChange={event => setMessage(event.target.value)} placeholder="Write a message"/>
+        <Button onClick={sendMessage} label="Hash Message Irreversibly"/>
+        <div className="w-full flex flex-row-reverse justify-start bg-black flex-wrap-reverse mt-6">
+            {seeds.map(seed => <Mark seed={seed} key={seed.id} /> )}
+        </div>
+    </>
 }
 
 type MarkProps = {
@@ -72,4 +60,4 @@ const Mark: FC<MarkProps> = ({seed}) => {
     </div>
 }
 
-export default Logbook;
+export default LogbookForm;

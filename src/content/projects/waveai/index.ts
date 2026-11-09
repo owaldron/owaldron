@@ -1,5 +1,11 @@
-export { default as image1 } from './wave1.png';
-export { default as image2 } from './wave2.png';
-export { default as image3 } from './wave3.png';
-export { default as image4 } from './wave4.png';
-export { default as image5 } from './wave5.png';
+import image1Img from './wave1.png';
+import image2Img from './wave2.png';
+import image3Img from './wave3.png';
+import image4Img from './wave4.png';
+import image5Img from './wave5.png';
+
+export const image1: string = image1Img.src;
+export const image2: string = image2Img.src;
+export const image3: string = image3Img.src;
+export const image4: string = image4Img.src;
+export const image5: string = image5Img.src;

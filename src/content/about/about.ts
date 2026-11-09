@@ -1,6 +1,6 @@
 import * as images from './icons'
 
-const resumeLink = "https://drive.google.com/file/d/1mI15y7ssrpQtGUiJAgt1NS_DaVV0Xu0v/view?usp=sharing";
+import { resumeLink } from './about-links';
 
 const aboutMeText = `
 My name is Owen Waldron, and I’m a 4th year computer science student at the University of Waterloo specializing in AI & Pure Math.

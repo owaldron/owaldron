@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC } from "react";
 import './Button.css';
 import posthog from "posthog-js";

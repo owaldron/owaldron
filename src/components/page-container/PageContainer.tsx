@@ -1,27 +1,21 @@
 import React, { FC, ReactNode } from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import { useLocation } from "react-router-dom";
-import styles from './PageContainer.module.css';
+import FadeIn from "./FadeIn";
 
 type ContainerProps = {
     children: ReactNode;
 };
 
 const PageContainer: FC<ContainerProps> = ({ children }) => {
-    const location = useLocation();
-    const from = location.state && location.state['from'];
-
-    const fromHome = from === 'home';
-    
     return (
-        <article className={fromHome? styles['fade-in'] : ''}>
+        <FadeIn>
             <Header />
             <div className="center" >
                 {children}
             </div>
             <Footer />
-        </article>
+        </FadeIn>
     );
 };
 

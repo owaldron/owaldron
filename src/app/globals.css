@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: 'Jersey 15';
-  src: local('Jersey 15'), url('./assets/fonts/Jersey15Custom.ttf') format('truetype');
+  src: local('Jersey 15'), url('../assets/fonts/Jersey15Custom.ttf') format('truetype');
   size-adjust: 70%;
 }
 
 @font-face {
   font-family: 'Jersey 25';
-  src: local('Jersey 55'), url('./assets/fonts/Jersey25Custom.ttf') format('truetype');
+  src: local('Jersey 55'), url('../assets/fonts/Jersey25Custom.ttf') format('truetype');
   size-adjust: 70%;
 }
 

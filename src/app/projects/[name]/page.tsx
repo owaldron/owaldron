@@ -1,61 +1,54 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
 import PageContainer from "../../../components/page-container/PageContainer";
 import Box from "../../../components/box/Box";
-import { Link, useParams } from "react-router-dom";
 import projects from '../../../content/projects/projects';
-import OnButton from '../../../assets/images/radiobutton/buttonon.png'
-import OffButton from '../../../assets/images/radiobutton/buttonoff.png'
+import { pageMetadata } from "../../../content/site";
+import ImageCarousel from "./ImageCarousel";
 
-const ProjectView = () => {
-    let { name } = useParams();
-    const [tempIndex, setIndex] = useState(0);
-    const [cycling, setCycling] = useState(true);
-    const [check, setCheck] = useState(0);
-    const [counter, setCounter] = useState(0);
+type Params = { name: string };
+type Props = { params: Promise<Params> };
 
-    useEffect(() => {
-        if (cycling) setTimeout(() => setCounter(counter + 1), 3000)
-    }, [cycling, counter])
+// Only the projects listed in content/projects are built; anything else is a 404.
+export const dynamicParams = false;
 
+export function generateStaticParams(): Params[] {
+    return projects.map(project => ({ name: project.url }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { name } = await params;
+    const project = projects.find(proj => proj.url === name);
+    if (!project) return {};
+    return pageMetadata({
+        title: project.name,
+        description: project.tldr.trim(),
+        path: `/projects/${project.url}`,
+        image: project.images[0],
+    });
+}
+
+export default async function ProjectView({ params }: Props) {
+    const { name } = await params;
     const project = projects.find(proj => proj.url === name);
 
-    if (!project) {
-        return <h1>
-            Uh oh! Looks like this project doesn't exist...
-        </h1>
-    }
-    
-    const dif = cycling ? counter - check : 0;
-    const index = (tempIndex + dif) % project.images.length;
+    if (!project) notFound();
 
     return (
         <PageContainer>
             <Box 
                 label="Project View"
                 leftButtons={
-                    <Link className="whitespace-nowrap text-card-border underline" to="/projects">
+                    <Link className="whitespace-nowrap text-card-border underline" href="/projects">
                         {"< Projects"}
                     </Link>
                 }
             >
                 <div className="flex flex-col items-center py-6 px-8">
                     <h1 className="mb-4 text-4xl">{project.name}</h1>
-                    <img 
-                     className="w-[42rem] md:h-[26rem] object-cover border-card-border border-4" 
-                     src={project.images[index]} alt="" 
-                     />
-                    <div className="flex gap-1 mt-2">
-                        {project.images.map((_, i) => 
-                            <img 
-                             key={i}
-                             style={{imageRendering: 'pixelated'}}
-                             className="cursor-pointer h-6"
-                             src={index === i ? OnButton : OffButton} 
-                             onClick={() => { setCycling(false); setIndex(i); setCheck(counter) }}
-                             alt=""
-                             />
-                        )}
-                    </div>
+                    <ImageCarousel images={project.images} />
                     <div className="flex mt-6 gap-8 md:flex-row flex-col">
                         <div>
                             <h2 className="text-2xl mb-2">Description</h2>
@@ -94,5 +87,3 @@ const ProjectView = () => {
         </PageContainer>
     )
 }
-
-export default ProjectView;
